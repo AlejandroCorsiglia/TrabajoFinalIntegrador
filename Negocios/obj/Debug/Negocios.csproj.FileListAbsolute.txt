@@ -1,0 +1,6 @@
+F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\Negocios\bin\Debug\Negocios.dll
+F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\Negocios\bin\Debug\Negocios.pdb
+F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\Negocios\obj\Debug\Negocios.csproj.AssemblyReference.cache
+F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\Negocios\obj\Debug\Negocios.csproj.CoreCompileInputs.cache
+F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\Negocios\obj\Debug\Negocios.dll
+F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\Negocios\obj\Debug\Negocios.pdb
