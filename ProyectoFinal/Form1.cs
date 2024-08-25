@@ -67,7 +67,7 @@ namespace ProyectoFinal
                 else
                 {
                    
-                    MessageBox.Show("Producto no encontrado. Por favor, ingrese un ID válido.");
+                    MessageBox.Show("Producto no encontrado. Por favor ingrese un ID válido.");
                     
                     tbxBuscarID.Clear();
                 }
