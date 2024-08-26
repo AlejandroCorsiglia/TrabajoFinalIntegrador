@@ -32,3 +32,4 @@ F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.pdb
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\bin\Debug\Negocios.dll
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\bin\Debug\Negocios.pdb
+F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.FormAgregarProducto.resources
