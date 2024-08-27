@@ -65,7 +65,7 @@ namespace ProyectoFinal
                 else
                 {
                    
-                    MessageBox.Show("Producto no encontrado. Por favor, ingrese un ID válido.");
+                    MessageBox.Show("Producto no encontrado. Por favor ingrese un ID válido.");
                     
                     tbxBuscarID.Clear();
                 }
@@ -99,7 +99,14 @@ namespace ProyectoFinal
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
+
+            
         {
+           // FormAgregarProducto FAgregar = new FormAgregarProducto(url);
+
+//            FAgregar.ShowDialog();
+
+
             if (!string.IsNullOrEmpty(tbxTitle.Text) && decimal.TryParse(txbPrice.Text, out decimal price) &&
         int.TryParse(tbxID.Text, out int id))
     {
