@@ -16,7 +16,8 @@ namespace ProyectoFinal
     public partial class Form1 : Form
     {
         private string url = "https://fakestoreapi.com";
-//        private Productos ProductosSeleccionado;
+        private Productos producto;
+        
 
         public Form1()
         {
@@ -59,7 +60,7 @@ namespace ProyectoFinal
             if (int.TryParse(tbxBuscarID.Text, out int productId))
             {
                 // Llama al método estático GetProductoByID en la clase Productos
-                Productos producto = Productos.GetProductoByID(url, productId);
+                 producto = Productos.GetProductoByID(url, productId);
 
                 if (producto != null)
                 {
@@ -157,14 +158,14 @@ namespace ProyectoFinal
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            FormModificarProducto FModificar = new FormModificarProducto();
+            FormModificarProducto FModificar = new FormModificarProducto(producto);
             FModificar.ShowDialog();
         }
 
         private void BtnBorrar_Click(object sender, EventArgs e)
         {
-            FormEliminarProducto FEliminar = new FormEliminarProducto();
-            FEliminar.ShowDialog();
+         //   FormEliminarProducto FEliminar = new FormEliminarProducto(producto);
+          // FEliminar.ShowDialog();
         }
 
         private void FormInicial()

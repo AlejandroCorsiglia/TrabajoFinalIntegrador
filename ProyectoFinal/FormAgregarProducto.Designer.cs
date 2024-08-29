@@ -164,7 +164,7 @@
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.lblCategory);
             this.Name = "FormAgregarProducto";
-            this.Text = "FormAgregarProducto";
+            this.Text = "AGREGAR PRODUCTO";
             this.ResumeLayout(false);
             this.PerformLayout();
 

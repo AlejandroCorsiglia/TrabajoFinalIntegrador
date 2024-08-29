@@ -16,19 +16,19 @@ namespace ProyectoFinal
     {
 
         private Productos producto;
-        public FormModificarProducto(/*Productos producto*/)
+        public FormModificarProducto(Productos producto)
         {
             InitializeComponent();
             Dimensionar();
 
-            /*this.producto = producto;
+            this.producto = producto;
 
             tbcID.Text = producto.Id.ToString();
             tbxTItle.Text = producto.Title;
             tbxPrice.Text = producto.Price.ToString();
             tbxCategory.Text = producto.Category;
-            tbxDescription.Text = producto.Description;*/
-
+            tbxDescription.Text = producto.Description;
+            
         }
 
         private void Dimensionar()

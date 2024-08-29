@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,14 @@ namespace ProyectoFinal
 {
     public partial class FormEliminarProducto : Form
     {
-        public FormEliminarProducto()
+
+       // private Productos producto;
+        public FormEliminarProducto(/*Productos producto*/)
         {
             InitializeComponent();
             Dimensionar();
+
+           // tbxID.Text = producto.Id.ToString();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -41,6 +46,8 @@ namespace ProyectoFinal
 
             // Centrar el formulario en la pantalla
             this.StartPosition = FormStartPosition.CenterScreen;
+
+           // this.FormBorderStyle = FormBorderStyle.None;
         }
     }
 }
