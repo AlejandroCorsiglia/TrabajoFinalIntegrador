@@ -33,3 +33,6 @@ F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\bin\Debug\Negocios.dll
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\bin\Debug\Negocios.pdb
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.FormAgregarProducto.resources
+F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\bin\Debug\Negocios.dll.config
+F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.FormModificarProducto.resources
+F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.FormEliminarProducto.resources

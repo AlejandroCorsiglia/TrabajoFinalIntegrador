@@ -15,13 +15,15 @@ namespace ProyectoFinal
 {
     public partial class FormAgregarProducto : Form
     {
-        public Productos NuevoProducto { get; private set; }
+        public Productos ProductoAgregado { get; private set; }
 
         private string url;
         public FormAgregarProducto(string apiUrl)
         {
             InitializeComponent();
             url = apiUrl;
+
+            Dimensionar();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -42,44 +44,56 @@ namespace ProyectoFinal
         private void BtnAgregarProducto_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(tbxTitle.Text) && decimal.TryParse(txbPrice.Text, out decimal price) &&
-            int.TryParse(tbxID.Text, out int id))
+         int.TryParse(tbxID.Text, out int id))
             {
-                // Crear un nuevo objeto Productos con los valores ingresados
-                var nuevoProducto = new Productos
+                try
                 {
-                    Id = id,
-                    Title = tbxTitle.Text,
-                    Price = price,
-                    Category = tbxCategory.Text,
-                    Description = tbxDescription.Text
-                };
+                    // Crear un nuevo objeto Productos con los valores ingresados
+                    var nuevoProducto = new Productos
+                    {
+                        Id = id,
+                        Title = tbxTitle.Text,
+                        Price = price,
+                        Category = tbxCategory.Text,
+                        Description = tbxDescription.Text
+                    };
 
-                // Configurar el cliente RestSharp para realizar la solicitud POST
-                var client = new RestClient(url);
-                var request = new RestRequest("products", Method.Post);
-                request.AddJsonBody(nuevoProducto);
+                    // Llamar al método PostProducto de la clase Productos
+                    ProductoAgregado = Productos.PostProducto(nuevoProducto, url);
 
-                // Ejecutar la solicitud y obtener la respuesta
-                var response = client.Execute<Productos>(request);
-
-                // Verificar si la solicitud fue exitosa
-                if (response.IsSuccessful)
-                {
+                    // Mostrar mensaje de éxito
                     MessageBox.Show("Producto agregado exitosamente.");
 
-                    // Cerrar el formulario y devolver el control al formulario principal
+                   
+
+                    // Cerrar el formulario con un resultado OK
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Error al agregar el producto. Inténtalo nuevamente.");
+                    MessageBox.Show(ex.Message);
                 }
             }
             else
             {
                 MessageBox.Show("Por favor, complete todos los campos obligatorios.");
             }
+        }
+
+        private void Dimensionar()
+        {
+            // Fijar el tamaño del formulario
+            this.Size = new Size(500, 300); // Cambia a las dimensiones deseadas
+
+            // Deshabilitar la redimensión
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+
+            // Deshabilitar el botón de maximizar
+            this.MaximizeBox = false;
+
+            // Centrar el formulario en la pantalla
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }
