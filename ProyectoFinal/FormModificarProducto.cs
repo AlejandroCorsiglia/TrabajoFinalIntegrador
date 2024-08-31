@@ -24,11 +24,14 @@ namespace ProyectoFinal
             this.producto = producto;
 
             tbcID.Text = producto.Id.ToString();
+            tbcID.ReadOnly = true;
             tbxTItle.Text = producto.Title;
             tbxPrice.Text = producto.Price.ToString();
             tbxCategory.Text = producto.Category;
             tbxDescription.Text = producto.Description;
-            
+
+           
+
         }
 
         private void Dimensionar()

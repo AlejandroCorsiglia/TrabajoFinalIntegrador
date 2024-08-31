@@ -47,35 +47,35 @@
             // 
             this.tbxTitle.Location = new System.Drawing.Point(100, 94);
             this.tbxTitle.Name = "tbxTitle";
-            this.tbxTitle.Size = new System.Drawing.Size(267, 20);
+            this.tbxTitle.Size = new System.Drawing.Size(433, 20);
             this.tbxTitle.TabIndex = 20;
             // 
             // tbxPrice
             // 
             this.tbxPrice.Location = new System.Drawing.Point(100, 127);
             this.tbxPrice.Name = "tbxPrice";
-            this.tbxPrice.Size = new System.Drawing.Size(267, 20);
+            this.tbxPrice.Size = new System.Drawing.Size(433, 20);
             this.tbxPrice.TabIndex = 19;
             // 
             // tbxCategory
             // 
             this.tbxCategory.Location = new System.Drawing.Point(100, 153);
             this.tbxCategory.Name = "tbxCategory";
-            this.tbxCategory.Size = new System.Drawing.Size(267, 20);
+            this.tbxCategory.Size = new System.Drawing.Size(433, 20);
             this.tbxCategory.TabIndex = 18;
             // 
             // tbxDesctiption
             // 
             this.tbxDesctiption.Location = new System.Drawing.Point(100, 188);
             this.tbxDesctiption.Name = "tbxDesctiption";
-            this.tbxDesctiption.Size = new System.Drawing.Size(267, 20);
+            this.tbxDesctiption.Size = new System.Drawing.Size(433, 20);
             this.tbxDesctiption.TabIndex = 17;
             // 
             // tbxID
             // 
             this.tbxID.Location = new System.Drawing.Point(100, 57);
             this.tbxID.Name = "tbxID";
-            this.tbxID.Size = new System.Drawing.Size(267, 20);
+            this.tbxID.Size = new System.Drawing.Size(433, 20);
             this.tbxID.TabIndex = 16;
             // 
             // lblDescription
@@ -126,7 +126,7 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(97, 20);
+            this.lblTitulo.Location = new System.Drawing.Point(181, 23);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(252, 13);
             this.lblTitulo.TabIndex = 21;
@@ -135,7 +135,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(121, 242);
+            this.btnEliminar.Location = new System.Drawing.Point(195, 263);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 22;
@@ -144,7 +144,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(233, 242);
+            this.btnCancelar.Location = new System.Drawing.Point(307, 263);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 23;
@@ -157,7 +157,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Red;
-            this.ClientSize = new System.Drawing.Size(432, 275);
+            this.ClientSize = new System.Drawing.Size(643, 365);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.lblTitulo);

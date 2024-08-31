@@ -23,7 +23,7 @@ namespace Negocios
 
 
 
-
+        //METODO GET
         public static List<Productos> GetProductos(string url)
         {
             var client = new RestClient(url);
@@ -32,7 +32,7 @@ namespace Negocios
             return productos;
         }
 
-
+        //METODO GET BY ID
         public static Productos GetProductoByID(string url, int productId)
         {
             var client = new RestClient(url);
@@ -43,7 +43,7 @@ namespace Negocios
 
 
 
-
+        // METODO POST
         public static Productos PostProducto(Productos nuevoProducto, string url)
         {
             var client = new RestClient(url);
@@ -64,5 +64,11 @@ namespace Negocios
             }
 
         }
+
+        // METODO UPDATE
+
+
+        //METODO DELETE
+
     }
 }

@@ -13,14 +13,29 @@ namespace ProyectoFinal
 {
     public partial class FormEliminarProducto : Form
     {
-
-       // private Productos producto;
-        public FormEliminarProducto(/*Productos producto*/)
+        private Productos producto;
+        // private Productos producto;
+        public FormEliminarProducto(Productos producto /*Productos producto*/)
         {
             InitializeComponent();
             Dimensionar();
+            this.producto = producto;
 
-           // tbxID.Text = producto.Id.ToString();
+
+            tbxID.Text = producto.Id.ToString();
+            tbxTitle.Text = producto.Title;
+            tbxPrice.Text = producto.Price.ToString();
+            tbxCategory.Text = producto.Category;
+            tbxDesctiption.Text = producto.Description;
+
+            ReadOnly();
+
+
+
+
+
+
+            // tbxID.Text = producto.Id.ToString();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -33,10 +48,20 @@ namespace ProyectoFinal
             this.Close();
         }
 
+
+        private void ReadOnly()
+        {
+
+            tbxID.ReadOnly = true;
+            tbxTitle.ReadOnly = true;
+            tbxPrice.ReadOnly = true;
+            tbxCategory.ReadOnly = true;
+            tbxDesctiption.ReadOnly = true;
+        }
         private void Dimensionar()
         {
             // Fijar el tamaño del formulario
-            this.Size = new Size(475, 350); // Cambia a las dimensiones deseadas
+            this.Size = new Size(650, 400); // Cambia a las dimensiones deseadas
 
             // Deshabilitar la redimensión
             this.FormBorderStyle = FormBorderStyle.FixedSingle;

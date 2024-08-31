@@ -163,8 +163,13 @@ namespace ProyectoFinal
         }
 
         private void BtnBorrar_Click(object sender, EventArgs e)
+
+           
         {
-         //   FormEliminarProducto FEliminar = new FormEliminarProducto(producto);
+
+            FormEliminarProducto FEliminar = new FormEliminarProducto(producto);
+            FEliminar.ShowDialog();
+         //   FormEliminarProducto FEliminar = new FormEliminarProducto();
           // FEliminar.ShowDialog();
         }
 

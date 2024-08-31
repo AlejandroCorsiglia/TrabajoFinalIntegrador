@@ -45,7 +45,7 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(137, 28);
+            this.lblTitulo.Location = new System.Drawing.Point(173, 28);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(127, 13);
             this.lblTitulo.TabIndex = 0;
@@ -100,40 +100,40 @@
             // 
             this.tbcID.Location = new System.Drawing.Point(82, 88);
             this.tbcID.Name = "tbcID";
-            this.tbcID.Size = new System.Drawing.Size(319, 20);
+            this.tbcID.Size = new System.Drawing.Size(355, 20);
             this.tbcID.TabIndex = 6;
             // 
             // tbxDescription
             // 
             this.tbxDescription.Location = new System.Drawing.Point(82, 219);
             this.tbxDescription.Name = "tbxDescription";
-            this.tbxDescription.Size = new System.Drawing.Size(319, 20);
+            this.tbxDescription.Size = new System.Drawing.Size(355, 20);
             this.tbxDescription.TabIndex = 7;
             // 
             // tbxCategory
             // 
             this.tbxCategory.Location = new System.Drawing.Point(82, 184);
             this.tbxCategory.Name = "tbxCategory";
-            this.tbxCategory.Size = new System.Drawing.Size(319, 20);
+            this.tbxCategory.Size = new System.Drawing.Size(355, 20);
             this.tbxCategory.TabIndex = 8;
             // 
             // tbxPrice
             // 
             this.tbxPrice.Location = new System.Drawing.Point(82, 158);
             this.tbxPrice.Name = "tbxPrice";
-            this.tbxPrice.Size = new System.Drawing.Size(319, 20);
+            this.tbxPrice.Size = new System.Drawing.Size(355, 20);
             this.tbxPrice.TabIndex = 9;
             // 
             // tbxTItle
             // 
             this.tbxTItle.Location = new System.Drawing.Point(82, 125);
             this.tbxTItle.Name = "tbxTItle";
-            this.tbxTItle.Size = new System.Drawing.Size(319, 20);
+            this.tbxTItle.Size = new System.Drawing.Size(355, 20);
             this.tbxTItle.TabIndex = 10;
             // 
             // BtnModificarProducto
             // 
-            this.BtnModificarProducto.Location = new System.Drawing.Point(120, 282);
+            this.BtnModificarProducto.Location = new System.Drawing.Point(156, 282);
             this.BtnModificarProducto.Name = "BtnModificarProducto";
             this.BtnModificarProducto.Size = new System.Drawing.Size(144, 23);
             this.BtnModificarProducto.TabIndex = 11;
@@ -145,7 +145,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(413, 316);
+            this.ClientSize = new System.Drawing.Size(563, 332);
             this.Controls.Add(this.BtnModificarProducto);
             this.Controls.Add(this.tbxTItle);
             this.Controls.Add(this.tbxPrice);
