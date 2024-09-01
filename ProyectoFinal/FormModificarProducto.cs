@@ -15,13 +15,16 @@ namespace ProyectoFinal
     public partial class FormModificarProducto : Form
     {
 
+
         private Productos producto;
-        public FormModificarProducto(Productos producto)
+        private string url;
+        public FormModificarProducto(Productos producto, string url)
         {
             InitializeComponent();
             Dimensionar();
 
             this.producto = producto;
+            this.url = url;
 
             tbcID.Text = producto.Id.ToString();
             tbcID.ReadOnly = true;
@@ -47,6 +50,23 @@ namespace ProyectoFinal
 
             // Centrar el formulario en la pantalla
             this.StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        private void BtnModificarProducto_Click(object sender, EventArgs e)
+        {
+            producto.Title = tbxTItle.Text;
+            producto.Price = decimal.Parse(tbxPrice.Text);
+            producto.Category = tbxCategory.Text;
+            producto.Description = tbxDescription.Text;
+
+            string resultado = Productos.ModificarProducto(producto, url );
+
+            MessageBox.Show(resultado);
+          
+
+
+
+            this.Close();
         }
     }
 }

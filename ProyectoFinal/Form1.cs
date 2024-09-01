@@ -158,8 +158,15 @@ namespace ProyectoFinal
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            FormModificarProducto FModificar = new FormModificarProducto(producto);
+            FormModificarProducto FModificar = new FormModificarProducto(producto, url);
+
+         
+            
+
             FModificar.ShowDialog();
+            RefrescarGrilla();
+
+
         }
 
         private void BtnBorrar_Click(object sender, EventArgs e)
@@ -197,6 +204,16 @@ namespace ProyectoFinal
             // Centrar el formulario en la pantalla
             this.StartPosition = FormStartPosition.CenterScreen;
 
+        }
+
+
+    
+
+        private void RefrescarGrilla()
+        {
+            // Limpiar y actualizar la grilla con el producto modificado
+            GrillaApi.DataSource = null;
+            GrillaApi.DataSource = new List<Productos> { producto };
         }
     }
 }

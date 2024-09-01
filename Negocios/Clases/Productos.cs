@@ -65,10 +65,31 @@ namespace Negocios
 
         }
 
-        // METODO UPDATE
+        // METODO PUT
+
+        public static string ModificarProducto(Productos producto, string url)
+        {
+            var client = new RestClient(url);
+            var request = new RestRequest($"products/{producto.Id}", Method.Put); // Usamos PUT para actualizar el producto
+
+            request.AddJsonBody(producto); // Agrega el producto como JSON en el cuerpo de la solicitud
+
+            // Ejecutar la solicitud y obtener la respuesta
+            var response = client.Execute<Productos>(request);
+
+            // Verificar si la solicitud fue exitosa
+            if (response.IsSuccessful)
+            {
+                return "Producto modificado exitosamente.";
+            }
+            else
+            {
+                throw new Exception("Error al modificar el producto: " + response.ErrorMessage);
+            }
+        }
 
 
-        //METODO DELETE
+            //METODO DELETE
 
-    }
+        }
 }
