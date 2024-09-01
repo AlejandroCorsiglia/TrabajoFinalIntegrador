@@ -32,9 +32,8 @@ namespace ProyectoFinal
             List<Productos> productos = Productos.GetProductos(url);
             GrillaApi.DataSource = productos;
 
-            // Deshabilitar botones
-            BtnBorrar.Enabled = false;
-            BtnModificar.Enabled = false;
+            FormClickMostrarApi();
+
 
 
             // Limpiar el TextBox de buscar por ID
@@ -174,10 +173,11 @@ namespace ProyectoFinal
            
         {
 
-            FormEliminarProducto FEliminar = new FormEliminarProducto(producto);
+            FormEliminarProducto FEliminar = new FormEliminarProducto(producto, url);
             FEliminar.ShowDialog();
-         //   FormEliminarProducto FEliminar = new FormEliminarProducto();
-          // FEliminar.ShowDialog();
+            //GrillaApi.DataSource = null;
+            //GrillaApi.DataSource = producto;
+            RefrescarGrilla2();
         }
 
         private void FormInicial()
@@ -186,6 +186,9 @@ namespace ProyectoFinal
             // Deshabilitar botones
             BtnBorrar.Enabled = false;
             BtnModificar.Enabled = false;
+            btnAgregar.Enabled = false;
+            btnBuscarID.Enabled = false;
+            tbxBuscarID.ReadOnly = true;
 
             // Limpiar la grilla de datos
             GrillaApi.DataSource = null;
@@ -206,6 +209,16 @@ namespace ProyectoFinal
 
         }
 
+        private void FormClickMostrarApi()
+        {
+            // Deshabilitar botones
+            BtnBorrar.Enabled = false;
+            BtnModificar.Enabled = false;
+            btnAgregar.Enabled = true;
+            btnBuscarID.Enabled = true;
+            tbxBuscarID.ReadOnly = false;
+        }
+
 
     
 
@@ -214,6 +227,29 @@ namespace ProyectoFinal
             // Limpiar y actualizar la grilla con el producto modificado
             GrillaApi.DataSource = null;
             GrillaApi.DataSource = new List<Productos> { producto };
+        }
+
+        private void RefrescarGrilla2()
+        {
+            try
+            {
+                // Obtener la lista actual de productos desde la grilla
+                var productos = GrillaApi.DataSource as List<Productos>;
+
+                if (productos != null)
+                {
+                    // Eliminar el producto específico de la lista
+                    productos.RemoveAll(p => p.Id == producto.Id); //elimina todos los elementos de la lista productos 
+
+                    // Actualizar la grilla con la lista modificada
+                    GrillaApi.DataSource = null;
+                    GrillaApi.DataSource = productos;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al refrescar la grilla: {ex.Message}");
+            }
         }
     }
 }

@@ -70,7 +70,7 @@ namespace Negocios
         public static string ModificarProducto(Productos producto, string url)
         {
             var client = new RestClient(url);
-            var request = new RestRequest($"products/{producto.Id}", Method.Put); // Usamos PUT para actualizar el producto
+            var request = new RestRequest($"products/{producto.Id}", Method.Put);
 
             request.AddJsonBody(producto); // Agrega el producto como JSON en el cuerpo de la solicitud
 
@@ -89,7 +89,35 @@ namespace Negocios
         }
 
 
-            //METODO DELETE
+        //METODO DELETE
+
+        public static string EliminarProducto(Productos producto, string url)
+        {
+          
+                try
+                {
+                    var client = new RestClient(url);
+                    var request = new RestRequest($"products/{producto.Id}", Method.Delete);
+
+                    // Ejecutar la solicitud y obtener la respuesta
+                    var response = client.Execute(request);
+
+                    // Verificar si la solicitud fue exitosa
+                    if (response.IsSuccessful)
+                    {
+                        return "Producto eliminado exitosamente.";
+                    }
+                    else
+                    {
+                        return $"Error al eliminar el producto: {response.Content}";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return $"Ocurrió un error al intentar eliminar el producto: {ex.Message}";
+                }
+            }
 
         }
-}
+    }
+

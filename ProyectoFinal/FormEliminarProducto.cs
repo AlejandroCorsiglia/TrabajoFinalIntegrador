@@ -14,12 +14,14 @@ namespace ProyectoFinal
     public partial class FormEliminarProducto : Form
     {
         private Productos producto;
-        // private Productos producto;
-        public FormEliminarProducto(Productos producto /*Productos producto*/)
+        private string url;
+        
+        public FormEliminarProducto(Productos producto, string url )
         {
             InitializeComponent();
             Dimensionar();
             this.producto = producto;
+            this.url = url;
 
 
             tbxID.Text = producto.Id.ToString();
@@ -30,12 +32,7 @@ namespace ProyectoFinal
 
             ReadOnly();
 
-
-
-
-
-
-            // tbxID.Text = producto.Id.ToString();
+          
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -73,6 +70,21 @@ namespace ProyectoFinal
             this.StartPosition = FormStartPosition.CenterScreen;
 
            // this.FormBorderStyle = FormBorderStyle.None;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string resultado = Productos.EliminarProducto(producto, url);
+
+                MessageBox.Show(resultado);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            } catch(Exception ex)
+            {
+                MessageBox.Show($"Error al eliminar el producto: {ex.Message}");
+            }
         }
     }
 }
