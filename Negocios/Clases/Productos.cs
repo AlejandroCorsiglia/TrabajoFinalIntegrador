@@ -118,6 +118,26 @@ namespace Negocios
                 }
             }
 
+        public static List<string> GetCategorias(string url)
+        {
+            var client = new RestClient(url);
+            var request = new RestRequest("products/categories", Method.Get);
+
+            // Llamada a la API para obtener las categorías
+            List<string> categorias = client.Get<List<string>>(request);
+            return categorias;
         }
+
+        public static List<Productos> GetProductosPorCategoria(string url, string categoria)
+        {
+            var client = new RestClient(url);
+            var request = new RestRequest($"products/category/{categoria}", Method.Get);
+
+            // Llamada a la API para obtener productos por categoría
+            List<Productos> productos = client.Get<List<Productos>>(request);
+            return productos;
+        }
+
+    }
     }
 

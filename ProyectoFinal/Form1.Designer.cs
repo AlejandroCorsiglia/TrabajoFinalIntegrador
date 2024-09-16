@@ -36,6 +36,7 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.BtnBorrar = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
+            this.cbxCategory = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaApi)).BeginInit();
             this.groupBoxBuscarID.SuspendLayout();
             this.SuspendLayout();
@@ -120,12 +121,23 @@
             this.BtnModificar.UseVisualStyleBackColor = true;
             this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
+            // cbxCategory
+            // 
+            this.cbxCategory.FormattingEnabled = true;
+            this.cbxCategory.Location = new System.Drawing.Point(699, 379);
+            this.cbxCategory.Name = "cbxCategory";
+            this.cbxCategory.Size = new System.Drawing.Size(121, 21);
+            this.cbxCategory.TabIndex = 15;
+            this.cbxCategory.Text = "Category";
+            this.cbxCategory.SelectedIndexChanged += new System.EventHandler(this.cbxCategory_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(954, 621);
+            this.Controls.Add(this.cbxCategory);
             this.Controls.Add(this.groupBoxBuscarID);
             this.Controls.Add(this.GrillaApi);
             this.Controls.Add(this.btnMostrarApi);
@@ -150,6 +162,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button BtnBorrar;
         private System.Windows.Forms.Button BtnModificar;
+        private System.Windows.Forms.ComboBox cbxCategory;
     }
 }
 

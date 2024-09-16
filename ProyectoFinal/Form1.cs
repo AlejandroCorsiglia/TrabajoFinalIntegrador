@@ -34,6 +34,8 @@ namespace ProyectoFinal
 
             FormClickMostrarApi();
 
+            cbxCategory.Enabled = true;
+
 
 
             // Limpiar el TextBox de buscar por ID
@@ -98,6 +100,16 @@ namespace ProyectoFinal
         private void Form1_Load(object sender, EventArgs e)
         {
             FormInicial();
+            // Obtener las categorías desde la API
+            List<string> categorias = Productos.GetCategorias(url);
+
+            categorias.Insert(0, "Category");
+
+            // Llenar el ComboBox con las categorías
+            cbxCategory.DataSource = categorias;
+
+
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -159,9 +171,6 @@ namespace ProyectoFinal
         {
             FormModificarProducto FModificar = new FormModificarProducto(producto, url);
 
-         
-            
-
             FModificar.ShowDialog();
             RefrescarGrilla();
 
@@ -170,14 +179,22 @@ namespace ProyectoFinal
 
         private void BtnBorrar_Click(object sender, EventArgs e)
 
-           
+
         {
 
             FormEliminarProducto FEliminar = new FormEliminarProducto(producto, url);
-            FEliminar.ShowDialog();
-            //GrillaApi.DataSource = null;
-            //GrillaApi.DataSource = producto;
-            RefrescarGrilla2();
+
+            if (FEliminar.ShowDialog() == DialogResult.OK)
+            {
+               
+                RefrescarGrilla2();
+
+            }
+            else
+            {
+                MessageBox.Show("Eliminación cancelada.");
+            }
+           
         }
 
         private void FormInicial()
@@ -207,6 +224,9 @@ namespace ProyectoFinal
             // Centrar el formulario en la pantalla
             this.StartPosition = FormStartPosition.CenterScreen;
 
+            // **Deshabilitar el ComboBox de categorías**
+            cbxCategory.Enabled = false;
+
         }
 
         private void FormClickMostrarApi()
@@ -217,6 +237,8 @@ namespace ProyectoFinal
             btnAgregar.Enabled = true;
             btnBuscarID.Enabled = true;
             tbxBuscarID.ReadOnly = false;
+
+
         }
 
 
@@ -251,7 +273,15 @@ namespace ProyectoFinal
                 MessageBox.Show($"Error al refrescar la grilla: {ex.Message}");
             }
         }
-    }
+
+        private void cbxCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string categoriaSeleccionada = cbxCategory.SelectedItem.ToString();
+            List<Productos> productos = Productos.GetProductosPorCategoria(url, categoriaSeleccionada);
+            GrillaApi.DataSource = productos;
+        }
+
+        }
 }
 
     

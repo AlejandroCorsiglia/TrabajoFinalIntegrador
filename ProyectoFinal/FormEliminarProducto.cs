@@ -42,6 +42,7 @@ namespace ProyectoFinal
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
@@ -81,6 +82,7 @@ namespace ProyectoFinal
                 MessageBox.Show(resultado);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
+
             } catch(Exception ex)
             {
                 MessageBox.Show($"Error al eliminar el producto: {ex.Message}");
