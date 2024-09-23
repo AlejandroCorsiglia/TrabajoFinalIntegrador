@@ -29,12 +29,13 @@ namespace ProyectoFinal
 
         private void btnMostrarApi_Click(object sender, EventArgs e)
         {
-            List<Productos> productos = Productos.GetProductos(url);
+            Productos product = new Productos();
+            List<Productos> productos = product.GetProductos(url);
             GrillaApi.DataSource = productos;
 
             FormClickMostrarApi();
 
-            cbxCategory.Enabled = true;
+           
 
 
 
@@ -60,8 +61,10 @@ namespace ProyectoFinal
 
             if (int.TryParse(tbxBuscarID.Text, out int productId))
             {
+                Productos product = new Productos();
+
                 // Llama al método estático GetProductoByID en la clase Productos
-                 producto = Productos.GetProductoByID(url, productId);
+                producto = product.GetProductoByID(url, productId);
 
                 if (producto != null)
                 {
@@ -72,6 +75,7 @@ namespace ProyectoFinal
                     // Habilitar los botones de eliminar y modificar si no están habilitados
                     BtnBorrar.Enabled = true;
                     BtnModificar.Enabled = true;
+                    cbxCategory.Enabled = false;
                 }
                 else
                 {
@@ -100,14 +104,7 @@ namespace ProyectoFinal
         private void Form1_Load(object sender, EventArgs e)
         {
             FormInicial();
-            // Obtener las categorías desde la API
-            List<string> categorias = Productos.GetCategorias(url);
-
-            categorias.Insert(0, "Category");
-
-            // Llenar el ComboBox con las categorías
-            cbxCategory.DataSource = categorias;
-
+           
 
 
         }
@@ -237,12 +234,22 @@ namespace ProyectoFinal
             btnAgregar.Enabled = true;
             btnBuscarID.Enabled = true;
             tbxBuscarID.ReadOnly = false;
+            cbxCategory.Enabled = true;
+
+            // Obtener las categorías desde la API
+            List<string> categorias = Productos.GetCategorias(url);
+
+            categorias.Insert(0, "All");
+
+            // Llenar el ComboBox con las categorías
+            cbxCategory.DataSource = categorias;
+
 
 
         }
 
 
-    
+
 
         private void RefrescarGrilla()
         {
@@ -277,8 +284,22 @@ namespace ProyectoFinal
         private void cbxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             string categoriaSeleccionada = cbxCategory.SelectedItem.ToString();
-            List<Productos> productos = Productos.GetProductosPorCategoria(url, categoriaSeleccionada);
-            GrillaApi.DataSource = productos;
+
+            if(categoriaSeleccionada == "All")
+            {
+                Productos product = new Productos();
+                List<Productos> producto = product.GetProductos(url);
+                GrillaApi.DataSource = producto;
+            }
+            else
+            {
+                List<Productos> productos = Productos.GetProductosPorCategoria(url, categoriaSeleccionada);
+                GrillaApi.DataSource = productos;
+
+
+            }
+
+            
         }
 
         }

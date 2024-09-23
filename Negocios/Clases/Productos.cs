@@ -24,7 +24,7 @@ namespace Negocios
 
 
         //METODO GET
-        public static List<Productos> GetProductos(string url)
+        public  List<Productos> GetProductos(string url)
         {
             var client = new RestClient(url);
             var request = new RestRequest("products", Method.Get);
@@ -33,7 +33,7 @@ namespace Negocios
         }
 
         //METODO GET BY ID
-        public static Productos GetProductoByID(string url, int productId)
+        public  Productos GetProductoByID(string url, int productId)
         {
             var client = new RestClient(url);
             var request = new RestRequest($"products/{productId}", Method.Get);
@@ -44,7 +44,7 @@ namespace Negocios
 
 
         // METODO POST
-        public static Productos PostProducto(Productos nuevoProducto, string url)
+        public  Productos PostProducto(Productos nuevoProducto, string url)
         {
             var client = new RestClient(url);
             var request = new RestRequest("products", Method.Post);
@@ -67,7 +67,7 @@ namespace Negocios
 
         // METODO PUT
 
-        public static string ModificarProducto(Productos producto, string url)
+        public  string ModificarProducto(Productos producto, string url)
         {
             var client = new RestClient(url);
             var request = new RestRequest($"products/{producto.Id}", Method.Put);
@@ -91,7 +91,7 @@ namespace Negocios
 
         //METODO DELETE
 
-        public static string EliminarProducto(Productos producto, string url)
+        public  string EliminarProducto(Productos producto, string url)
         {
           
                 try

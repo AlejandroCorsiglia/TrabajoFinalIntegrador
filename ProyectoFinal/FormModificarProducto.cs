@@ -59,7 +59,9 @@ namespace ProyectoFinal
             producto.Category = tbxCategory.Text;
             producto.Description = tbxDescription.Text;
 
-            string resultado = Productos.ModificarProducto(producto, url );
+            Productos product = new Productos();
+
+            string resultado = product.ModificarProducto(producto, url);
 
             MessageBox.Show(resultado);
           

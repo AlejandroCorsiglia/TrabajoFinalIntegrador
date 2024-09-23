@@ -77,7 +77,8 @@ namespace ProyectoFinal
         {
             try
             {
-                string resultado = Productos.EliminarProducto(producto, url);
+                Productos product = new Productos();
+                string resultado = product.EliminarProducto(producto, url);
 
                 MessageBox.Show(resultado);
                 this.DialogResult = DialogResult.OK;
