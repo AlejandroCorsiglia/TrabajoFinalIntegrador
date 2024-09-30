@@ -76,6 +76,7 @@ namespace ProyectoFinal
                     BtnBorrar.Enabled = true;
                     BtnModificar.Enabled = true;
                     cbxCategory.Enabled = false;
+                    BtnOrdenar.Enabled = false;
                 }
                 else
                 {
@@ -203,6 +204,7 @@ namespace ProyectoFinal
             btnAgregar.Enabled = false;
             btnBuscarID.Enabled = false;
             tbxBuscarID.ReadOnly = true;
+            BtnOrdenar.Enabled = false;
 
             // Limpiar la grilla de datos
             GrillaApi.DataSource = null;
@@ -235,6 +237,7 @@ namespace ProyectoFinal
             btnBuscarID.Enabled = true;
             tbxBuscarID.ReadOnly = false;
             cbxCategory.Enabled = true;
+            BtnOrdenar.Enabled = true;
 
             // Obtener las categorías desde la API
             List<string> categorias = Productos.GetCategorias(url);
@@ -302,7 +305,24 @@ namespace ProyectoFinal
             
         }
 
+        private void BtnOrdenar_Click(object sender, EventArgs e)
+        {
+            Productos productos = new Productos();
+
+            productos.ObtenerProductosOrdenadosDesc(url);
+            List<Productos> listaProductos = productos.ObtenerProductosOrdenadosDesc(url);
+
+            if (listaProductos != null)
+            {
+                // Asignar la lista de productos a la grilla
+                GrillaApi.DataSource = listaProductos;
+            }
+            else
+            {
+                MessageBox.Show("No se pudieron obtener los productos.");
+            }
         }
+    }
 }
 
     

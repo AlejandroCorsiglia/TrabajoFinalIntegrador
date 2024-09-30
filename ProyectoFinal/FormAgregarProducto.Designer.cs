@@ -127,9 +127,10 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(149, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(165, 13);
+            this.lblTitulo.Size = new System.Drawing.Size(187, 13);
             this.lblTitulo.TabIndex = 22;
             this.lblTitulo.Text = "AGREGAR PRODUCTO NUEVO";
             this.lblTitulo.Click += new System.EventHandler(this.label1_Click);
@@ -137,7 +138,7 @@
             // BtnAgregarProducto
             // 
             this.BtnAgregarProducto.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnAgregarProducto.Location = new System.Drawing.Point(152, 226);
+            this.BtnAgregarProducto.Location = new System.Drawing.Point(176, 226);
             this.BtnAgregarProducto.Name = "BtnAgregarProducto";
             this.BtnAgregarProducto.Size = new System.Drawing.Size(118, 24);
             this.BtnAgregarProducto.TabIndex = 23;

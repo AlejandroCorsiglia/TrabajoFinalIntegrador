@@ -45,9 +45,10 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(173, 28);
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(152, 26);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(127, 13);
+            this.lblTitulo.Size = new System.Drawing.Size(206, 20);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "MODFICAR PRODUCTO";
             // 
@@ -133,7 +134,7 @@
             // 
             // BtnModificarProducto
             // 
-            this.BtnModificarProducto.Location = new System.Drawing.Point(156, 282);
+            this.BtnModificarProducto.Location = new System.Drawing.Point(177, 283);
             this.BtnModificarProducto.Name = "BtnModificarProducto";
             this.BtnModificarProducto.Size = new System.Drawing.Size(144, 23);
             this.BtnModificarProducto.TabIndex = 11;

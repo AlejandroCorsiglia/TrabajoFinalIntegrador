@@ -73,6 +73,7 @@
             // 
             // tbxID
             // 
+            this.tbxID.ForeColor = System.Drawing.SystemColors.MenuText;
             this.tbxID.Location = new System.Drawing.Point(100, 57);
             this.tbxID.Name = "tbxID";
             this.tbxID.Size = new System.Drawing.Size(433, 20);
@@ -81,60 +82,74 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(31, 191);
+            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.ForeColor = System.Drawing.Color.Red;
+            this.lblDescription.Location = new System.Drawing.Point(22, 191);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(63, 13);
+            this.lblDescription.Size = new System.Drawing.Size(75, 13);
             this.lblDescription.TabIndex = 15;
             this.lblDescription.Text = "Description:";
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(60, 134);
+            this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.ForeColor = System.Drawing.Color.Red;
+            this.lblPrice.Location = new System.Drawing.Point(54, 130);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(34, 13);
+            this.lblPrice.Size = new System.Drawing.Size(40, 13);
             this.lblPrice.TabIndex = 14;
             this.lblPrice.Text = "Price:";
             // 
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
-            this.lblCategory.Location = new System.Drawing.Point(42, 160);
+            this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategory.ForeColor = System.Drawing.Color.Red;
+            this.lblCategory.Location = new System.Drawing.Point(33, 156);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(52, 13);
+            this.lblCategory.Size = new System.Drawing.Size(61, 13);
             this.lblCategory.TabIndex = 13;
             this.lblCategory.Text = "Category:";
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Red;
             this.lblTitle.Location = new System.Drawing.Point(64, 97);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(30, 13);
+            this.lblTitle.Size = new System.Drawing.Size(36, 13);
             this.lblTitle.TabIndex = 12;
             this.lblTitle.Text = "Title:";
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.ForeColor = System.Drawing.Color.Red;
             this.lblID.Location = new System.Drawing.Point(73, 60);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(21, 13);
+            this.lblID.Size = new System.Drawing.Size(24, 13);
             this.lblID.TabIndex = 11;
             this.lblID.Text = "ID:";
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(181, 23);
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.Red;
+            this.lblTitulo.Location = new System.Drawing.Point(40, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(252, 13);
+            this.lblTitulo.Size = new System.Drawing.Size(526, 25);
             this.lblTitulo.TabIndex = 21;
             this.lblTitulo.Text = "SEGURO QUIERE ELIMINAR ESTE PRODUCTO?";
             this.lblTitulo.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.Red;
             this.btnEliminar.Location = new System.Drawing.Point(195, 263);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
@@ -145,6 +160,8 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Red;
             this.btnCancelar.Location = new System.Drawing.Point(307, 263);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
@@ -157,7 +174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Red;
+            this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(643, 365);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEliminar);

@@ -37,6 +37,7 @@
             this.BtnBorrar = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.cbxCategory = new System.Windows.Forms.ComboBox();
+            this.BtnOrdenar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaApi)).BeginInit();
             this.groupBoxBuscarID.SuspendLayout();
             this.SuspendLayout();
@@ -124,12 +125,22 @@
             // cbxCategory
             // 
             this.cbxCategory.FormattingEnabled = true;
-            this.cbxCategory.Location = new System.Drawing.Point(699, 379);
+            this.cbxCategory.Location = new System.Drawing.Point(655, 378);
             this.cbxCategory.Name = "cbxCategory";
             this.cbxCategory.Size = new System.Drawing.Size(121, 21);
             this.cbxCategory.TabIndex = 15;
             this.cbxCategory.Text = "Category";
             this.cbxCategory.SelectedIndexChanged += new System.EventHandler(this.cbxCategory_SelectedIndexChanged);
+            // 
+            // BtnOrdenar
+            // 
+            this.BtnOrdenar.Location = new System.Drawing.Point(782, 378);
+            this.BtnOrdenar.Name = "BtnOrdenar";
+            this.BtnOrdenar.Size = new System.Drawing.Size(75, 23);
+            this.BtnOrdenar.TabIndex = 17;
+            this.BtnOrdenar.Text = "Ordenar";
+            this.BtnOrdenar.UseVisualStyleBackColor = true;
+            this.BtnOrdenar.Click += new System.EventHandler(this.BtnOrdenar_Click);
             // 
             // Form1
             // 
@@ -137,6 +148,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(954, 621);
+            this.Controls.Add(this.BtnOrdenar);
             this.Controls.Add(this.cbxCategory);
             this.Controls.Add(this.groupBoxBuscarID);
             this.Controls.Add(this.GrillaApi);
@@ -163,6 +175,7 @@
         private System.Windows.Forms.Button BtnBorrar;
         private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.ComboBox cbxCategory;
+        private System.Windows.Forms.Button BtnOrdenar;
     }
 }
 

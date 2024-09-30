@@ -118,6 +118,7 @@ namespace Negocios
                 }
             }
 
+        // METODO GET ALL CATEGORY
         public static List<string> GetCategorias(string url)
         {
             var client = new RestClient(url);
@@ -128,6 +129,7 @@ namespace Negocios
             return categorias;
         }
 
+        // METODO GET IN CATEGORY
         public static List<Productos> GetProductosPorCategoria(string url, string categoria)
         {
             var client = new RestClient(url);
@@ -138,6 +140,34 @@ namespace Negocios
             return productos;
         }
 
+
+        //METODO SORT RESULT
+        public List<Productos> ObtenerProductosOrdenadosDesc(string url)
+        {
+            try
+            {
+                var client = new RestClient(url);  // Cliente de RestSharp
+                var request = new RestRequest("products?sort=desc", Method.Get);  // Solicitud GET
+                var response = client.Execute<List<Productos>>(request);  // Ejecutar solicitud y obtener respuesta
+
+                if (response.IsSuccessful)
+                {
+                    return response.Data;  // Devolver lista de productos si la solicitud fue exitosa
+                }
+                else
+                {
+                    throw new Exception("Error al obtener productos: " + response.ErrorMessage);  // Manejo de errores
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                Console.WriteLine(ex.Message);
+                return null;  // Devolver null en caso de error
+            }
+        }
     }
-    }
+
+}
+    
 
