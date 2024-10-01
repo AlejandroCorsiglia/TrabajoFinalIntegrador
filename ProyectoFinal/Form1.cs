@@ -31,11 +31,16 @@ namespace ProyectoFinal
         {
             Productos product = new Productos();
             List<Productos> productos = product.GetProductos(url);
+            GrillaApi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GrillaApi.DataSource = productos;
+            GrillaApi.ReadOnly = true;
+
+         
 
             FormClickMostrarApi();
-
            
+
+
 
 
 
@@ -45,6 +50,11 @@ namespace ProyectoFinal
 
 
         }
+
+
+
+
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -76,7 +86,8 @@ namespace ProyectoFinal
                     BtnBorrar.Enabled = true;
                     BtnModificar.Enabled = true;
                     cbxCategory.Enabled = false;
-                    BtnOrdenar.Enabled = false;
+                    BtnDesc.Enabled = false;
+                    btnAsc.Enabled = false;
                 }
                 else
                 {
@@ -167,11 +178,41 @@ namespace ProyectoFinal
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            FormModificarProducto FModificar = new FormModificarProducto(producto, url);
 
-            FModificar.ShowDialog();
-            RefrescarGrilla();
 
+            if (int.TryParse(tbxBuscarID.Text, out int productId))
+            {
+                Productos product = new Productos();
+                producto = product.GetProductoByID(url, productId);
+
+
+
+                if (producto != null)
+                {
+
+
+                    FormModificarProducto FModificar = new FormModificarProducto(producto, url);
+
+                    FModificar.ShowDialog();
+                    RefrescarGrilla();
+
+                }
+                else
+                {
+                    MessageBox.Show("No hay producto seleccionado para modificar.");
+                }
+            }
+         /*   else if (producto != null)
+            {
+                // Si no hay un ID válido en tbxBuscarID, usa el producto seleccionado en la grilla
+                FormModificarProducto FModificar = new FormModificarProducto(producto, url);
+                FModificar.ShowDialog();
+                RefrescarGrilla();
+            }
+            else
+            {
+                MessageBox.Show("No hay producto seleccionado para modificar.");
+            }*/
 
         }
 
@@ -180,19 +221,32 @@ namespace ProyectoFinal
 
         {
 
-            FormEliminarProducto FEliminar = new FormEliminarProducto(producto, url);
-
-            if (FEliminar.ShowDialog() == DialogResult.OK)
+            if (int.TryParse(tbxBuscarID.Text, out int productId))
             {
-               
-                RefrescarGrilla2();
+                Productos product = new Productos();
+                producto = product.GetProductoByID(url, productId);
 
+
+
+                if (producto != null)
+                {
+
+
+
+                    FormEliminarProducto FEliminar = new FormEliminarProducto(producto, url);
+
+                    if (FEliminar.ShowDialog() == DialogResult.OK)
+                    {
+
+                        RefrescarGrilla2();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Eliminación cancelada.");
+                    }
+                }
             }
-            else
-            {
-                MessageBox.Show("Eliminación cancelada.");
-            }
-           
         }
 
         private void FormInicial()
@@ -204,7 +258,8 @@ namespace ProyectoFinal
             btnAgregar.Enabled = false;
             btnBuscarID.Enabled = false;
             tbxBuscarID.ReadOnly = true;
-            BtnOrdenar.Enabled = false;
+            BtnDesc.Enabled = false;
+            btnAsc.Enabled = false;
 
             // Limpiar la grilla de datos
             GrillaApi.DataSource = null;
@@ -213,7 +268,7 @@ namespace ProyectoFinal
             tbxBuscarID.Clear();
 
             // Fijar el tamaño del formulario
-            this.Size = new Size(1000, 700); // Cambia a las dimensiones deseadas
+          //  this.Size = new Size(1000, 700); // Cambia a las dimensiones deseadas
 
             // Deshabilitar la redimensión
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -237,7 +292,8 @@ namespace ProyectoFinal
             btnBuscarID.Enabled = true;
             tbxBuscarID.ReadOnly = false;
             cbxCategory.Enabled = true;
-            BtnOrdenar.Enabled = true;
+            BtnDesc.Enabled = true;
+            btnAsc.Enabled = true;
 
             // Obtener las categorías desde la API
             List<string> categorias = Productos.GetCategorias(url);
@@ -246,6 +302,13 @@ namespace ProyectoFinal
 
             // Llenar el ComboBox con las categorías
             cbxCategory.DataSource = categorias;
+
+            GrillaApi.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Modo de selección de fila completa
+
+            GrillaApi.Columns[0].Width = 40;    // Cambiar el tamaño de la columna Nombre
+
+            GrillaApi.Columns[2].Width = 100;  // Cambiar el tamaño de la columna Descripción
+            GrillaApi.Columns[3].Width = 150; // Cambiar el tamaño de la columna Categoría
 
 
 
@@ -321,6 +384,66 @@ namespace ProyectoFinal
             {
                 MessageBox.Show("No se pudieron obtener los productos.");
             }
+        }
+
+        private void btnAsc_Click(object sender, EventArgs e)
+        {
+            Productos productos = new Productos();
+
+           // productos.ObtenerProductosOrdenadosDesc(url);
+            List<Productos> listaProductos = productos.ObtenerProductosOrdenadosAsc(url);
+
+            if (listaProductos != null)
+            {
+                // Asignar la lista de productos a la grilla
+                GrillaApi.DataSource = listaProductos;
+            }
+            else
+            {
+                MessageBox.Show("No se pudieron obtener los productos.");
+            }
+        }
+
+        private void GrillaApi_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+         
+
+        }
+
+        private void GrillaApi_Click(object sender, EventArgs e)
+        {
+          
+
+            if (GrillaApi.CurrentRow != null)
+            {
+                // Obtiene la fila seleccionada
+                DataGridViewRow filaSeleccionada = GrillaApi.CurrentRow;
+
+                // Asegúrate de que el DataBoundItem sea un Producto
+                Productos productoSeleccionado = filaSeleccionada.DataBoundItem as Productos;
+
+                if (productoSeleccionado != null)
+                {
+                    // Asigna el ID del producto al tbxBuscarPorId
+                    tbxBuscarID.Text = productoSeleccionado.Id.ToString(); // Asegúrate de que 'Id' sea la propiedad correcta
+                }
+
+                btnAsc.Enabled = true;
+                BtnDesc.Enabled = true;
+                cbxCategory.Enabled = true;
+                BtnModificar.Enabled = true;
+                BtnBorrar.Enabled = true;
+            }
+        }
+
+        private void GrillaApi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tbxBuscarID_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -166,6 +166,32 @@ namespace Negocios
                 return null;  // Devolver null en caso de error
             }
         }
+
+        //METODO SORT RESULT
+        public List<Productos> ObtenerProductosOrdenadosAsc(string url)
+        {
+            try
+            {
+                var client = new RestClient(url);  // Cliente de RestSharp
+                var request = new RestRequest("products?sort=asc", Method.Get);  // Solicitud GET
+                var response = client.Execute<List<Productos>>(request);  // Ejecutar solicitud y obtener respuesta
+
+                if (response.IsSuccessful)
+                {
+                    return response.Data;  // Devolver lista de productos si la solicitud fue exitosa
+                }
+                else
+                {
+                    throw new Exception("Error al obtener productos: " + response.ErrorMessage);  // Manejo de errores
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                Console.WriteLine(ex.Message);
+                return null;  // Devolver null en caso de error
+            }
+        }
     }
 
 }
