@@ -1,6 +1,6 @@
 ﻿namespace ProyectoFinal
 {
-    partial class Form1
+    partial class FormPrincipal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -44,19 +44,25 @@
             this.groupBoxOrdenar = new System.Windows.Forms.GroupBox();
             this.btnAsc = new System.Windows.Forms.Button();
             this.groupBoxProductos = new System.Windows.Forms.GroupBox();
+            this.groupBoxCombo = new System.Windows.Forms.GroupBox();
+            this.groupBoxLimitResult = new System.Windows.Forms.GroupBox();
+            this.btnLimitar = new System.Windows.Forms.Button();
+            this.tbxLimitar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaApi)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBoxBuscarID.SuspendLayout();
             this.groupBoxFiltrar.SuspendLayout();
             this.groupBoxOrdenar.SuspendLayout();
             this.groupBoxProductos.SuspendLayout();
+            this.groupBoxCombo.SuspendLayout();
+            this.groupBoxLimitResult.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnMostrarApi
             // 
             this.btnMostrarApi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMostrarApi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrarApi.Location = new System.Drawing.Point(110, 485);
+            this.btnMostrarApi.Location = new System.Drawing.Point(53, 29);
             this.btnMostrarApi.Name = "btnMostrarApi";
             this.btnMostrarApi.Size = new System.Drawing.Size(214, 55);
             this.btnMostrarApi.TabIndex = 0;
@@ -69,9 +75,10 @@
             this.GrillaApi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GrillaApi.ContextMenuStrip = this.contextMenuStrip1;
             this.GrillaApi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GrillaApi.Location = new System.Drawing.Point(20, 30);
+            this.GrillaApi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GrillaApi.Location = new System.Drawing.Point(3, 18);
             this.GrillaApi.Name = "GrillaApi";
-            this.GrillaApi.Size = new System.Drawing.Size(1214, 405);
+            this.GrillaApi.Size = new System.Drawing.Size(1337, 402);
             this.GrillaApi.TabIndex = 1;
             this.GrillaApi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaApi_CellContentClick);
             this.GrillaApi.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaApi_CellDoubleClick);
@@ -123,7 +130,7 @@
             this.groupBoxBuscarID.Controls.Add(this.tbxBuscarID);
             this.groupBoxBuscarID.Controls.Add(this.btnBuscarID);
             this.groupBoxBuscarID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxBuscarID.Location = new System.Drawing.Point(411, 485);
+            this.groupBoxBuscarID.Location = new System.Drawing.Point(307, 29);
             this.groupBoxBuscarID.Name = "groupBoxBuscarID";
             this.groupBoxBuscarID.Size = new System.Drawing.Size(195, 110);
             this.groupBoxBuscarID.TabIndex = 14;
@@ -135,11 +142,11 @@
             // 
             this.btnAgregar.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAgregar.Location = new System.Drawing.Point(110, 546);
+            this.btnAgregar.Location = new System.Drawing.Point(53, 90);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(214, 49);
+            this.btnAgregar.Size = new System.Drawing.Size(214, 55);
             this.btnAgregar.TabIndex = 16;
             this.btnAgregar.Text = "Agregar Producto";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -159,7 +166,7 @@
             // BtnDesc
             // 
             this.BtnDesc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnDesc.Location = new System.Drawing.Point(49, 50);
+            this.BtnDesc.Location = new System.Drawing.Point(49, 61);
             this.BtnDesc.Name = "BtnDesc";
             this.BtnDesc.Size = new System.Drawing.Size(115, 23);
             this.BtnDesc.TabIndex = 17;
@@ -171,7 +178,7 @@
             // 
             this.groupBoxFiltrar.Controls.Add(this.cbxCategory);
             this.groupBoxFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxFiltrar.Location = new System.Drawing.Point(633, 485);
+            this.groupBoxFiltrar.Location = new System.Drawing.Point(529, 29);
             this.groupBoxFiltrar.Name = "groupBoxFiltrar";
             this.groupBoxFiltrar.Size = new System.Drawing.Size(207, 110);
             this.groupBoxFiltrar.TabIndex = 18;
@@ -183,7 +190,7 @@
             this.groupBoxOrdenar.Controls.Add(this.btnAsc);
             this.groupBoxOrdenar.Controls.Add(this.BtnDesc);
             this.groupBoxOrdenar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxOrdenar.Location = new System.Drawing.Point(864, 485);
+            this.groupBoxOrdenar.Location = new System.Drawing.Point(760, 29);
             this.groupBoxOrdenar.Name = "groupBoxOrdenar";
             this.groupBoxOrdenar.Size = new System.Drawing.Size(211, 110);
             this.groupBoxOrdenar.TabIndex = 19;
@@ -193,7 +200,7 @@
             // btnAsc
             // 
             this.btnAsc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAsc.Location = new System.Drawing.Point(49, 21);
+            this.btnAsc.Location = new System.Drawing.Point(49, 32);
             this.btnAsc.Name = "btnAsc";
             this.btnAsc.Size = new System.Drawing.Size(115, 23);
             this.btnAsc.TabIndex = 18;
@@ -207,25 +214,64 @@
             this.groupBoxProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxProductos.Location = new System.Drawing.Point(12, 12);
             this.groupBoxProductos.Name = "groupBoxProductos";
-            this.groupBoxProductos.Size = new System.Drawing.Size(1252, 453);
+            this.groupBoxProductos.Size = new System.Drawing.Size(1343, 423);
             this.groupBoxProductos.TabIndex = 20;
             this.groupBoxProductos.TabStop = false;
             this.groupBoxProductos.Text = "Productos";
             // 
-            // Form1
+            // groupBoxCombo
+            // 
+            this.groupBoxCombo.Controls.Add(this.groupBoxLimitResult);
+            this.groupBoxCombo.Controls.Add(this.btnMostrarApi);
+            this.groupBoxCombo.Controls.Add(this.groupBoxBuscarID);
+            this.groupBoxCombo.Controls.Add(this.btnAgregar);
+            this.groupBoxCombo.Controls.Add(this.groupBoxFiltrar);
+            this.groupBoxCombo.Controls.Add(this.groupBoxOrdenar);
+            this.groupBoxCombo.Location = new System.Drawing.Point(48, 459);
+            this.groupBoxCombo.Name = "groupBoxCombo";
+            this.groupBoxCombo.Size = new System.Drawing.Size(1273, 172);
+            this.groupBoxCombo.TabIndex = 21;
+            this.groupBoxCombo.TabStop = false;
+            // 
+            // groupBoxLimitResult
+            // 
+            this.groupBoxLimitResult.Controls.Add(this.tbxLimitar);
+            this.groupBoxLimitResult.Controls.Add(this.btnLimitar);
+            this.groupBoxLimitResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxLimitResult.Location = new System.Drawing.Point(1002, 29);
+            this.groupBoxLimitResult.Name = "groupBoxLimitResult";
+            this.groupBoxLimitResult.Size = new System.Drawing.Size(212, 110);
+            this.groupBoxLimitResult.TabIndex = 20;
+            this.groupBoxLimitResult.TabStop = false;
+            this.groupBoxLimitResult.Text = "Limitar Productos";
+            // 
+            // btnLimitar
+            // 
+            this.btnLimitar.Location = new System.Drawing.Point(78, 48);
+            this.btnLimitar.Name = "btnLimitar";
+            this.btnLimitar.Size = new System.Drawing.Size(118, 23);
+            this.btnLimitar.TabIndex = 0;
+            this.btnLimitar.Text = "Limitar";
+            this.btnLimitar.UseVisualStyleBackColor = true;
+            this.btnLimitar.Click += new System.EventHandler(this.btnLimitar_Click);
+            // 
+            // tbxLimitar
+            // 
+            this.tbxLimitar.Location = new System.Drawing.Point(15, 49);
+            this.tbxLimitar.Name = "tbxLimitar";
+            this.tbxLimitar.Size = new System.Drawing.Size(57, 22);
+            this.tbxLimitar.TabIndex = 1;
+            // 
+            // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(1347, 643);
-            this.Controls.Add(this.btnAgregar);
+            this.ClientSize = new System.Drawing.Size(1386, 679);
+            this.Controls.Add(this.groupBoxCombo);
             this.Controls.Add(this.groupBoxProductos);
-            this.Controls.Add(this.groupBoxOrdenar);
-            this.Controls.Add(this.groupBoxFiltrar);
-            this.Controls.Add(this.groupBoxBuscarID);
-            this.Controls.Add(this.btnMostrarApi);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Name = "Form1";
+            this.Name = "FormPrincipal";
             this.Text = "Proyecto Final";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Click += new System.EventHandler(this.Form1_Click);
@@ -236,6 +282,9 @@
             this.groupBoxFiltrar.ResumeLayout(false);
             this.groupBoxOrdenar.ResumeLayout(false);
             this.groupBoxProductos.ResumeLayout(false);
+            this.groupBoxCombo.ResumeLayout(false);
+            this.groupBoxLimitResult.ResumeLayout(false);
+            this.groupBoxLimitResult.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -257,6 +306,10 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBoxCombo;
+        private System.Windows.Forms.GroupBox groupBoxLimitResult;
+        private System.Windows.Forms.TextBox tbxLimitar;
+        private System.Windows.Forms.Button btnLimitar;
     }
 }
 

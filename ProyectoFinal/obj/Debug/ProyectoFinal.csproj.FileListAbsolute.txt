@@ -23,7 +23,6 @@ F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\bin\
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\bin\Debug\System.ValueTuple.xml
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.csproj.AssemblyReference.cache
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.csproj.SuggestedBindingRedirects.cache
-F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.Form1.resources
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.Properties.Resources.resources
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.csproj.GenerateResource.cache
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.csproj.CoreCompileInputs.cache
@@ -37,3 +36,4 @@ F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\bin\
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.FormModificarProducto.resources
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.FormEliminarProducto.resources
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.FormProductoSeleccionado.resources
+F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.FormPrincipal.resources

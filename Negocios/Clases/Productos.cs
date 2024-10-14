@@ -192,6 +192,16 @@ namespace Negocios
                 return null;  // Devolver null en caso de error
             }
         }
+
+        // METODO LIMIT RESULT
+
+        public List<Productos> GetProductosConLimite(string url, int limite)
+        {
+            var client = new RestClient(url);
+            var request = new RestRequest($"products?limit={limite}", Method.Get);
+            List<Productos> productos = client.Get<List<Productos>>(request);
+            return productos;
+        }
     }
 
 }

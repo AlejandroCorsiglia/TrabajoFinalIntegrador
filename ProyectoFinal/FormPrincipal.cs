@@ -13,18 +13,18 @@ using System.Linq.Expressions;
 
 namespace ProyectoFinal
 {
-    public partial class Form1 : Form
+    public partial class FormPrincipal : Form
     {
         private string url = "https://fakestoreapi.com";
         private Productos producto;
-        
 
-        public Form1()
+
+        public FormPrincipal()
         {
             InitializeComponent();
             FormInicial();
 
-           
+
         }
 
         private void btnMostrarApi_Click(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace ProyectoFinal
             CargarGrilla();
 
             FormClickMostrarApi();
-           
+
 
             // Limpiar el TextBox de buscar por ID
             tbxBuscarID.Clear();
@@ -84,6 +84,8 @@ namespace ProyectoFinal
                     cbxCategory.Enabled = false;
                     BtnDesc.Enabled = false;
                     btnAsc.Enabled = false;
+                    btnLimitar.Enabled = false;
+                    tbxLimitar.Enabled = false;
                 }
                 else
                 {
@@ -91,27 +93,27 @@ namespace ProyectoFinal
                     MessageBox.Show("Producto no encontrado. Por favor ingrese un ID válido.");
                     tbxBuscarID.Clear();
 
-                 
+
                 }
             }
             else
             {
                 MessageBox.Show("Por favor, ingrese un ID válido.");
                 tbxBuscarID.Clear();
-            
 
 
 
 
 
-        }
+
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             FormInicial();
             CargarGrilla();
-           
+
 
 
         }
@@ -163,6 +165,9 @@ namespace ProyectoFinal
                     // Actualizar la grilla para mostrar el nuevo producto
                     GrillaApi.DataSource = null;
                     GrillaApi.DataSource = productos;
+                    AjustarGrilla();
+                    
+                    
                 }
                 else
                 {
@@ -171,53 +176,53 @@ namespace ProyectoFinal
             }
         }
 
-     /*   private void BtnModificar_Click(object sender, EventArgs e)
-        {
+        /*   private void BtnModificar_Click(object sender, EventArgs e)
+           {
 
 
-            if (int.TryParse(tbxBuscarID.Text, out int productId))
-            {
-                Productos product = new Productos();
-                producto = product.GetProductoByID(url, productId);
+               if (int.TryParse(tbxBuscarID.Text, out int productId))
+               {
+                   Productos product = new Productos();
+                   producto = product.GetProductoByID(url, productId);
 
 
 
-                if (producto != null)
-                {
+                   if (producto != null)
+                   {
 
 
-                    FormModificarProducto FModificar = new FormModificarProducto(producto, url);
+                       FormModificarProducto FModificar = new FormModificarProducto(producto, url);
 
-                    FModificar.ShowDialog();
-                    RefrescarGrilla();
+                       FModificar.ShowDialog();
+                       RefrescarGrilla();
 
-                }
-                else
-                {
-                    MessageBox.Show("No hay producto seleccionado para modificar.");
-                }
-            }
-         /*   else if (producto != null)
-            {
-                // Si no hay un ID válido en tbxBuscarID, usa el producto seleccionado en la grilla
-                FormModificarProducto FModificar = new FormModificarProducto(producto, url);
-                FModificar.ShowDialog();
-                RefrescarGrilla();
-            }
-            else
-            {
-                MessageBox.Show("No hay producto seleccionado para modificar.");
-            }*/
+                   }
+                   else
+                   {
+                       MessageBox.Show("No hay producto seleccionado para modificar.");
+                   }
+               }
+            /*   else if (producto != null)
+               {
+                   // Si no hay un ID válido en tbxBuscarID, usa el producto seleccionado en la grilla
+                   FormModificarProducto FModificar = new FormModificarProducto(producto, url);
+                   FModificar.ShowDialog();
+                   RefrescarGrilla();
+               }
+               else
+               {
+                   MessageBox.Show("No hay producto seleccionado para modificar.");
+               }*/
 
         //}
 
-      /*  private void BtnBorrar_Click(object sender, EventArgs e)
+        /*  private void BtnBorrar_Click(object sender, EventArgs e)
 
 
-        {
+          {
 
-            BorrarProducto();
-        }*/
+              BorrarProducto();
+          }*/
 
         private void BorrarProducto()
         {
@@ -254,7 +259,7 @@ namespace ProyectoFinal
         {
             string categoriaSeleccionada = cbxCategory.SelectedItem.ToString();
 
-            if(categoriaSeleccionada == "All")
+            if (categoriaSeleccionada == "All")
             {
                 Productos product = new Productos();
                 List<Productos> producto = product.GetProductos(url);
@@ -268,7 +273,7 @@ namespace ProyectoFinal
 
             }
 
-            
+
         }
 
         private void BtnOrdenar_Click(object sender, EventArgs e)
@@ -293,7 +298,7 @@ namespace ProyectoFinal
         {
             Productos productos = new Productos();
 
-           // productos.ObtenerProductosOrdenadosDesc(url);
+            // productos.ObtenerProductosOrdenadosDesc(url);
             List<Productos> listaProductos = productos.ObtenerProductosOrdenadosAsc(url);
 
             if (listaProductos != null)
@@ -309,11 +314,38 @@ namespace ProyectoFinal
 
         private void GrillaApi_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-         
 
-        }
+            if (GrillaApi.SelectedRows.Count > 0)
+            {
+                // Obtener el producto de la fila seleccionada
+                var filaSeleccionada = GrillaApi.SelectedRows[0].DataBoundItem as Productos;
 
-        private void GrillaApi_Click(object sender, EventArgs e)
+                if (filaSeleccionada != null)
+                {
+                    // Crear el formulario de modificación
+                    FormModificarProducto FModificar = new FormModificarProducto(filaSeleccionada, url);
+
+                    // Mostrar el formulario y si se confirman los cambios, refrescar la grilla
+                    if (FModificar.ShowDialog() == DialogResult.OK)
+                    {
+                        RefrescarGrilla();  // Puedes pasar el ID si deseas refrescar solo una fila
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo obtener el producto de la fila seleccionada.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una fila.");
+            }
+        
+    
+
+    }
+
+    private void GrillaApi_Click(object sender, EventArgs e)
         {
           
 
@@ -449,6 +481,8 @@ namespace ProyectoFinal
             cbxCategory.Enabled = true;
             BtnDesc.Enabled = true;
             btnAsc.Enabled = true;
+            btnLimitar.Enabled = true;
+            tbxLimitar.Enabled = true;
 
             Categorias();
 
@@ -480,7 +514,9 @@ namespace ProyectoFinal
                     GrillaApi.DataSource = productos; // Asigna la lista actualizada
 
                     // Refrescar la grilla para que los cambios se reflejen
+                    AjustarGrilla();
                     GrillaApi.Refresh();
+                    
 
 
                 }
@@ -514,6 +550,43 @@ namespace ProyectoFinal
 
             // Llenar el ComboBox con las categorías
             cbxCategory.DataSource = categorias;
+        }
+
+        private void btnLimitar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Lee el número ingresado en el TextBox
+                int limite;
+                if (int.TryParse(tbxLimitar.Text, out limite))
+                {
+                    
+                    if (limite > 0)
+                    {
+                       
+                        Productos productos = new Productos();
+                      
+
+                        // Obtener los productos con el límite especificado
+                        List<Productos> listaProductos = productos.GetProductosConLimite(url, limite);
+
+                        // Asignar la lista de productos a la DataGridView
+                        GrillaApi.DataSource = listaProductos;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingrese un número mayor a 0.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, ingrese un número válido.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
     }
