@@ -10,12 +10,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocios;
 using System.Linq.Expressions;
+using System.Configuration;
+using System.Web.Configuration;
 
 namespace ProyectoFinal
 {
     public partial class FormPrincipal : Form
     {
-        private string url = "https://fakestoreapi.com";
+        private string url = "";
+      
         private Productos producto;
 
 
@@ -34,7 +37,7 @@ namespace ProyectoFinal
             FormClickMostrarApi();
 
 
-            // Limpiar el TextBox de buscar por ID
+            
             tbxBuscarID.Clear();
 
 
@@ -101,11 +104,6 @@ namespace ProyectoFinal
                 MessageBox.Show("Por favor, ingrese un ID válido.");
                 tbxBuscarID.Clear();
 
-
-
-
-
-
             }
         }
 
@@ -139,7 +137,7 @@ namespace ProyectoFinal
 
         {
 
-            // Crear una instancia del formulario para agregar productos y pasarle la URL
+          
             FormAgregarProducto formAgregar = new FormAgregarProducto(url);
 
             // Si el formulario de agregar productos se cierra con OK, entonces agregamos el producto a la grilla
@@ -176,53 +174,6 @@ namespace ProyectoFinal
             }
         }
 
-        /*   private void BtnModificar_Click(object sender, EventArgs e)
-           {
-
-
-               if (int.TryParse(tbxBuscarID.Text, out int productId))
-               {
-                   Productos product = new Productos();
-                   producto = product.GetProductoByID(url, productId);
-
-
-
-                   if (producto != null)
-                   {
-
-
-                       FormModificarProducto FModificar = new FormModificarProducto(producto, url);
-
-                       FModificar.ShowDialog();
-                       RefrescarGrilla();
-
-                   }
-                   else
-                   {
-                       MessageBox.Show("No hay producto seleccionado para modificar.");
-                   }
-               }
-            /*   else if (producto != null)
-               {
-                   // Si no hay un ID válido en tbxBuscarID, usa el producto seleccionado en la grilla
-                   FormModificarProducto FModificar = new FormModificarProducto(producto, url);
-                   FModificar.ShowDialog();
-                   RefrescarGrilla();
-               }
-               else
-               {
-                   MessageBox.Show("No hay producto seleccionado para modificar.");
-               }*/
-
-        //}
-
-        /*  private void BtnBorrar_Click(object sender, EventArgs e)
-
-
-          {
-
-              BorrarProducto();
-          }*/
 
         private void BorrarProducto()
         {
@@ -254,28 +205,26 @@ namespace ProyectoFinal
             }
         }
 
-
         private void cbxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             string categoriaSeleccionada = cbxCategory.SelectedItem.ToString();
 
+            // Crear una instancia de la clase Productos
+            Productos productosApi = new Productos();
+
             if (categoriaSeleccionada == "All")
             {
-                Productos product = new Productos();
-                List<Productos> producto = product.GetProductos(url);
-                GrillaApi.DataSource = producto;
+                List<Productos> productos = productosApi.GetProductos(url);
+                GrillaApi.DataSource = productos; // Asignar la lista de productos a la grilla
             }
             else
             {
-                List<Productos> productos = Productos.GetProductosPorCategoria(url, categoriaSeleccionada);
-                GrillaApi.DataSource = productos;
-
-
+                List<Productos> productos = productosApi.GetProductosPorCategoria(url, categoriaSeleccionada);
+                GrillaApi.DataSource = productos; // Asignar la lista de productos filtrados por categoría a la grilla
             }
-
-
         }
 
+       
         private void BtnOrdenar_Click(object sender, EventArgs e)
         {
             Productos productos = new Productos();
@@ -364,8 +313,8 @@ namespace ProyectoFinal
                 }
 
                  btnAsc.Enabled = true;
-                  BtnDesc.Enabled = true;
-                  cbxCategory.Enabled = true;
+                 BtnDesc.Enabled = true;
+                 cbxCategory.Enabled = true;
           
             }
         }
@@ -445,16 +394,15 @@ namespace ProyectoFinal
         private void FormInicial()
         {
 
-       
 
+            
+
+            url = WebConfigurationManager.AppSettings["urlApi"];
             // Limpiar la grilla de datos
             GrillaApi.DataSource = null;
 
             // Limpiar el TextBox de buscar por ID
             tbxBuscarID.Clear();
-
-            // Fijar el tamaño del formulario
-            //  this.Size = new Size(1000, 700); // Cambia a las dimensiones deseadas
 
             // Deshabilitar la redimensión
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -464,7 +412,7 @@ namespace ProyectoFinal
             // Centrar el formulario en la pantalla
             this.StartPosition = FormStartPosition.CenterScreen;
 
-            // **Deshabilitar el ComboBox de categorías**
+            // Deshabilitar el ComboBox de categorías
             cbxCategory.Enabled = true;
 
             Categorias();
@@ -536,15 +484,19 @@ namespace ProyectoFinal
             GrillaApi.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Modo de selección de fila completa
 
             GrillaApi.Columns[0].Width = 40;    // Cambiar el tamaño de la columna Nombre
-
             GrillaApi.Columns[2].Width = 100;  // Cambiar el tamaño de la columna Descripción
             GrillaApi.Columns[3].Width = 150; // Cambiar el tamaño de la columna Categoría
         }
 
         private void Categorias()
         {
-            // Obtener las categorías desde la API
-            List<string> categorias = Productos.GetCategorias(url);
+           
+            Productos productosApi = new Productos(); 
+
+          
+            List<string> categorias = productosApi.GetCategorias(url); 
+
+          
 
             categorias.Insert(0, "All");
 

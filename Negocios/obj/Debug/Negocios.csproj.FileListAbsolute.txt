@@ -26,3 +26,6 @@ F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\Negocios\bin\Debug
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\Negocios\bin\Debug\System.Threading.Tasks.Extensions.xml
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\Negocios\bin\Debug\System.ValueTuple.xml
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\Negocios\obj\Debug\Negocios.csproj.CopyComplete
+F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\Negocios\bin\Debug\NLog.dll
+F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\Negocios\bin\Debug\NLog.xml
+F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\Negocios\bin\Debug\NLog.config

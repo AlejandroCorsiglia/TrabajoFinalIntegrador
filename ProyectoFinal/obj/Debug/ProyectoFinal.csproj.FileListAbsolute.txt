@@ -35,5 +35,7 @@ F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\bin\Debug\Negocios.dll.config
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.FormModificarProducto.resources
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.FormEliminarProducto.resources
-F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.FormProductoSeleccionado.resources
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.FormPrincipal.resources
+F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\bin\Debug\NLog.config
+F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\bin\Debug\NLog.dll
+F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\bin\Debug\NLog.xml
