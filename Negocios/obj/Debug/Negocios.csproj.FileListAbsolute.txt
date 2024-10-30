@@ -29,3 +29,34 @@ F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\Negocios\obj\Debug
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\Negocios\bin\Debug\NLog.dll
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\Negocios\bin\Debug\NLog.xml
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\Negocios\bin\Debug\NLog.config
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\NLog.config
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\Negocios.dll.config
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\Negocios.dll
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\Negocios.pdb
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\NLog.dll
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\RestSharp.dll
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\System.Buffers.dll
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\System.Memory.dll
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\System.Numerics.Vectors.dll
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\System.Text.Encodings.Web.dll
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\System.Text.Json.dll
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\System.Threading.Tasks.Extensions.dll
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\System.ValueTuple.dll
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\NLog.xml
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\RestSharp.xml
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\System.Buffers.xml
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\System.Memory.xml
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\System.Numerics.Vectors.xml
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\System.Text.Encodings.Web.xml
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\System.Text.Json.xml
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\System.Threading.Tasks.Extensions.xml
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\bin\Debug\System.ValueTuple.xml
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\obj\Debug\Negocios.csproj.AssemblyReference.cache
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\obj\Debug\Negocios.csproj.CoreCompileInputs.cache
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\obj\Debug\Negocios.csproj.CopyComplete
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\obj\Debug\Negocios.dll
+F:\Proyecto final\TrabajoFinalIntegrador\Negocios\obj\Debug\Negocios.pdb

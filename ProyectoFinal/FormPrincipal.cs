@@ -396,8 +396,9 @@ namespace ProyectoFinal
 
 
             
+                  url = WebConfigurationManager.AppSettings["urlApi"];
 
-            url = WebConfigurationManager.AppSettings["urlApi"];
+         //   url = ConfigurationManager.AppSettings["urlApi"];
             // Limpiar la grilla de datos
             GrillaApi.DataSource = null;
 

@@ -39,3 +39,44 @@ F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\obj\
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\bin\Debug\NLog.config
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\bin\Debug\NLog.dll
 F:\PROGRAMAS LAS NIEVES\VISUAL STUDIO\proyectos\ProyectoFinal\ProyectoFinal\bin\Debug\NLog.xml
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\NLog.config
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\ProyectoFinal.exe.config
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\ProyectoFinal.exe
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\ProyectoFinal.pdb
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\Negocios.dll
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\RestSharp.dll
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\System.Buffers.dll
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\System.Memory.dll
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\System.Numerics.Vectors.dll
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\System.Text.Encodings.Web.dll
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\System.Text.Json.dll
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\System.Threading.Tasks.Extensions.dll
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\System.ValueTuple.dll
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\NLog.dll
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\Negocios.pdb
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\Negocios.dll.config
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\RestSharp.xml
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\System.Buffers.xml
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\System.Memory.xml
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\System.Numerics.Vectors.xml
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\System.Text.Encodings.Web.xml
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\System.Text.Json.xml
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\System.Threading.Tasks.Extensions.xml
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\System.ValueTuple.xml
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\bin\Debug\NLog.xml
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\obj\Debug\ProyectoFinal.csproj.AssemblyReference.cache
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\obj\Debug\ProyectoFinal.csproj.SuggestedBindingRedirects.cache
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\obj\Debug\ProyectoFinal.FormPrincipal.resources
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\obj\Debug\ProyectoFinal.FormAgregarProducto.resources
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\obj\Debug\ProyectoFinal.FormEliminarProducto.resources
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\obj\Debug\ProyectoFinal.FormModificarProducto.resources
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\obj\Debug\ProyectoFinal.Properties.Resources.resources
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\obj\Debug\ProyectoFinal.csproj.GenerateResource.cache
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\obj\Debug\ProyectoFinal.csproj.CoreCompileInputs.cache
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\obj\Debug\ProyectoFinal.csproj.CopyComplete
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\obj\Debug\ProyectoFinal.exe
+F:\Proyecto final\TrabajoFinalIntegrador\ProyectoFinal\obj\Debug\ProyectoFinal.pdb
