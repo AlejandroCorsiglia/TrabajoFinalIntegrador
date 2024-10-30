@@ -60,15 +60,13 @@ namespace ProyectoFinal
 
                     Productos product = new Productos();
 
-                    // Llamar al método PostProducto de la clase Productos
+                  
                     ProductoAgregado = product.PostProducto(nuevoProducto, url);
 
-                    // Mostrar mensaje de éxito
                     MessageBox.Show("Producto agregado exitosamente.");
 
                    
 
-                    // Cerrar el formulario con un resultado OK
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }

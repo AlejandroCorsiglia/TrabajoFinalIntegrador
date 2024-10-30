@@ -74,12 +74,10 @@ namespace ProyectoFinal
             {
                 Productos product = new Productos();
 
-                // Llama al método estático GetProductoByID en la clase Productos
                 producto = product.GetProductoByID(url, productId);
 
                 if (producto != null)
                 {
-                    // Si se encuentra el producto, se añade a una lista y se muestra en la grilla
                     List<Productos> productos = new List<Productos> { producto };
                     GrillaApi.DataSource = productos;
 
@@ -92,7 +90,6 @@ namespace ProyectoFinal
                 }
                 else
                 {
-                    // Si no se encuentra el producto, muestra un mensaje
                     MessageBox.Show("Producto no encontrado. Por favor ingrese un ID válido.");
                     tbxBuscarID.Clear();
 
@@ -140,27 +137,22 @@ namespace ProyectoFinal
           
             FormAgregarProducto formAgregar = new FormAgregarProducto(url);
 
-            // Si el formulario de agregar productos se cierra con OK, entonces agregamos el producto a la grilla
             if (formAgregar.ShowDialog() == DialogResult.OK)
             {
-                // Obtener el producto agregado desde el formulario FormAgregarProducto
                 var productoAgregado = formAgregar.ProductoAgregado;
 
                 if (productoAgregado != null)
                 {
-                    // Obtener la lista actual de productos en la grilla
+                   
                     var productos = (List<Productos>)GrillaApi.DataSource;
 
-                    // Si la lista es null, inicializarla
                     if (productos == null)
                     {
                         productos = new List<Productos>();
                     }
 
-                    // Agregar el nuevo producto a la lista
                     productos.Add(productoAgregado);
 
-                    // Actualizar la grilla para mostrar el nuevo producto
                     GrillaApi.DataSource = null;
                     GrillaApi.DataSource = productos;
                     AjustarGrilla();
@@ -209,18 +201,17 @@ namespace ProyectoFinal
         {
             string categoriaSeleccionada = cbxCategory.SelectedItem.ToString();
 
-            // Crear una instancia de la clase Productos
             Productos productosApi = new Productos();
 
             if (categoriaSeleccionada == "All")
             {
                 List<Productos> productos = productosApi.GetProductos(url);
-                GrillaApi.DataSource = productos; // Asignar la lista de productos a la grilla
+                GrillaApi.DataSource = productos; 
             }
             else
             {
                 List<Productos> productos = productosApi.GetProductosPorCategoria(url, categoriaSeleccionada);
-                GrillaApi.DataSource = productos; // Asignar la lista de productos filtrados por categoría a la grilla
+                GrillaApi.DataSource = productos; 
             }
         }
 
@@ -234,7 +225,6 @@ namespace ProyectoFinal
 
             if (listaProductos != null)
             {
-                // Asignar la lista de productos a la grilla
                 GrillaApi.DataSource = listaProductos;
             }
             else
@@ -247,12 +237,10 @@ namespace ProyectoFinal
         {
             Productos productos = new Productos();
 
-            // productos.ObtenerProductosOrdenadosDesc(url);
             List<Productos> listaProductos = productos.ObtenerProductosOrdenadosAsc(url);
 
             if (listaProductos != null)
             {
-                // Asignar la lista de productos a la grilla
                 GrillaApi.DataSource = listaProductos;
             }
             else
@@ -266,18 +254,15 @@ namespace ProyectoFinal
 
             if (GrillaApi.SelectedRows.Count > 0)
             {
-                // Obtener el producto de la fila seleccionada
                 var filaSeleccionada = GrillaApi.SelectedRows[0].DataBoundItem as Productos;
 
                 if (filaSeleccionada != null)
                 {
-                    // Crear el formulario de modificación
                     FormModificarProducto FModificar = new FormModificarProducto(filaSeleccionada, url);
 
-                    // Mostrar el formulario y si se confirman los cambios, refrescar la grilla
                     if (FModificar.ShowDialog() == DialogResult.OK)
                     {
-                        RefrescarGrilla();  // Puedes pasar el ID si deseas refrescar solo una fila
+                        RefrescarGrilla();  
                     }
                 }
                 else
@@ -300,15 +285,12 @@ namespace ProyectoFinal
 
             if (GrillaApi.CurrentRow != null)
             {
-                // Obtiene la fila seleccionada
                 DataGridViewRow filaSeleccionada = GrillaApi.CurrentRow;
 
-                // Asegúrate de que el DataBoundItem sea un Producto
                 Productos productoSeleccionado = filaSeleccionada.DataBoundItem as Productos;
 
                 if (productoSeleccionado != null)
                 {
-                    // Asigna el ID del producto al tbxBuscarPorId
                     tbxBuscarID.Text = productoSeleccionado.Id.ToString(); // Asegúrate de que 'Id' sea la propiedad correcta
                 }
 
@@ -333,18 +315,14 @@ namespace ProyectoFinal
 
         private void borrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Verificar si hay una fila seleccionada en la grilla
             if (GrillaApi.SelectedRows.Count > 0)
             {
-                // Obtener el producto de la fila seleccionada
                 var filaSeleccionada = GrillaApi.SelectedRows[0].DataBoundItem as Productos;
 
                 if (filaSeleccionada != null)
                 {
-                    // Crear el formulario de confirmación de eliminación
                     FormEliminarProducto FEliminar = new FormEliminarProducto(filaSeleccionada, url);
 
-                    // Mostrar el formulario y si se confirma la eliminación, refrescar la grilla
                     if (FEliminar.ShowDialog() == DialogResult.OK)
                     {
                         RefrescarGrilla2(filaSeleccionada.Id);
@@ -365,18 +343,15 @@ namespace ProyectoFinal
         {
             if (GrillaApi.SelectedRows.Count > 0)
             {
-                // Obtener el producto de la fila seleccionada
                 var filaSeleccionada = GrillaApi.SelectedRows[0].DataBoundItem as Productos;
 
                 if (filaSeleccionada != null)
                 {
-                    // Crear el formulario de modificación
                     FormModificarProducto FModificar = new FormModificarProducto(filaSeleccionada, url);
 
-                    // Mostrar el formulario y si se confirman los cambios, refrescar la grilla
                     if (FModificar.ShowDialog() == DialogResult.OK)
                     {
-                        RefrescarGrilla();  // Puedes pasar el ID si deseas refrescar solo una fila
+                        RefrescarGrilla(); 
                     }
                 }
                 else
@@ -398,22 +373,18 @@ namespace ProyectoFinal
             
                   url = WebConfigurationManager.AppSettings["urlApi"];
 
-         //   url = ConfigurationManager.AppSettings["urlApi"];
-            // Limpiar la grilla de datos
             GrillaApi.DataSource = null;
 
-            // Limpiar el TextBox de buscar por ID
             tbxBuscarID.Clear();
 
-            // Deshabilitar la redimensión
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
-            // Deshabilitar el botón de maximizar
+       
             this.MaximizeBox = false;
-            // Centrar el formulario en la pantalla
+          
             this.StartPosition = FormStartPosition.CenterScreen;
 
-            // Deshabilitar el ComboBox de categorías
+          
             cbxCategory.Enabled = true;
 
             Categorias();
@@ -441,7 +412,7 @@ namespace ProyectoFinal
         }
         private void RefrescarGrilla()
         {
-            // Limpiar y actualizar la grilla con el producto modificado
+            
             GrillaApi.DataSource = null;
             GrillaApi.DataSource = new List<Productos> { producto };
             AjustarGrilla();
@@ -452,17 +423,16 @@ namespace ProyectoFinal
 
             try
             {
-                // Verificar si la grilla tiene productos cargados
                 if (GrillaApi.DataSource is List<Productos> productos)
                 {
-                    // Eliminar el producto específico de la lista
+                   
                     productos.RemoveAll(p => p.Id == productoId);
 
-                    // Actualizar el DataSource de la grilla
-                    GrillaApi.DataSource = null; // Limpia la fuente de datos actual
-                    GrillaApi.DataSource = productos; // Asigna la lista actualizada
+                   
+                    GrillaApi.DataSource = null; 
+                    GrillaApi.DataSource = productos; 
 
-                    // Refrescar la grilla para que los cambios se reflejen
+                    
                     AjustarGrilla();
                     GrillaApi.Refresh();
                     
@@ -482,11 +452,11 @@ namespace ProyectoFinal
         }
         private void AjustarGrilla()
         {
-            GrillaApi.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Modo de selección de fila completa
+            GrillaApi.SelectionMode = DataGridViewSelectionMode.FullRowSelect; 
 
-            GrillaApi.Columns[0].Width = 40;    // Cambiar el tamaño de la columna Nombre
-            GrillaApi.Columns[2].Width = 100;  // Cambiar el tamaño de la columna Descripción
-            GrillaApi.Columns[3].Width = 150; // Cambiar el tamaño de la columna Categoría
+            GrillaApi.Columns[0].Width = 40;   
+            GrillaApi.Columns[2].Width = 100;  
+            GrillaApi.Columns[3].Width = 150; 
         }
 
         private void Categorias()
@@ -509,7 +479,7 @@ namespace ProyectoFinal
         {
             try
             {
-                // Lee el número ingresado en el TextBox
+                
                 int limite;
                 if (int.TryParse(tbxLimitar.Text, out limite))
                 {
@@ -520,10 +490,10 @@ namespace ProyectoFinal
                         Productos productos = new Productos();
                       
 
-                        // Obtener los productos con el límite especificado
+                        
                         List<Productos> listaProductos = productos.GetProductosConLimite(url, limite);
 
-                        // Asignar la lista de productos a la DataGridView
+                       
                         GrillaApi.DataSource = listaProductos;
                     }
                     else

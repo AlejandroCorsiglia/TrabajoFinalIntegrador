@@ -34,8 +34,8 @@ namespace Negocios
             }
             catch (Exception ex)
             {
-                Logger.Error(ex, "Error al obtener productos desde la URL: {url}", url); // Loguea el error
-                return new List<Productos>(); // Retorna una lista vacía en caso de error
+                Logger.Error(ex, "Error al obtener productos desde la URL: {url}", url); 
+                return new List<Productos>(); 
             }
         }
 
@@ -73,16 +73,16 @@ namespace Negocios
                 var request = new RestRequest("products", Method.Post);
                 request.AddJsonBody(nuevoProducto);
 
-                // Ejecutar la solicitud y obtener la respuesta
+               
                 var response = client.Execute<Productos>(request);
 
-                // Retorna el producto creado o null si la respuesta no fue exitosa
-                return response.Data; // Esto podría ser null si la respuesta no fue exitosa
+                
+                return response.Data; 
             }
             catch (Exception ex)
             {
-                Logger.Error(ex, "Error al crear el producto: {producto}", nuevoProducto); // Loguea el error
-                return null; // Retorna null en caso de error
+                Logger.Error(ex, "Error al crear el producto: {producto}", nuevoProducto); 
+                return null; 
             }
         }
 
@@ -95,18 +95,18 @@ namespace Negocios
                 var client = new RestClient(url);
                 var request = new RestRequest($"products/{producto.Id}", Method.Put);
 
-                request.AddJsonBody(producto); // Agrega el producto como JSON en el cuerpo de la solicitud
+                request.AddJsonBody(producto); 
 
-                // Ejecutar la solicitud y obtener la respuesta
+              
                 var response = client.Execute<Productos>(request);
 
-                // Retorna un mensaje de éxito o el mensaje de error
+               
                 return response.IsSuccessful ? "Producto modificado exitosamente." : response.ErrorMessage;
             }
             catch (Exception ex )
             {
-                Logger.Error(ex, "Error al modificar el producto: {producto}", producto); // Loguea el error
-                return "Ocurrió un error al modificar el producto."; // Mensaje genérico en caso de error
+                Logger.Error(ex, "Error al modificar el producto: {producto}", producto); 
+                return "Ocurrió un error al modificar el producto."; 
                
             }
         }
@@ -122,16 +122,15 @@ namespace Negocios
                 var client = new RestClient(url);
                 var request = new RestRequest($"products/{producto.Id}", Method.Delete);
 
-                // Ejecutar la solicitud y obtener la respuesta
+                
                 var response = client.Execute(request);
 
-                // Retornar un mensaje basado en el resultado de la solicitud
                 return response.IsSuccessful ? "Producto eliminado exitosamente." : throw new Exception(response.Content);
             }
             catch (Exception ex)
             {
-                Logger.Error(ex, "Error al eliminar el producto: {productoId}", producto.Id); // Loguea el error
-                return $"Ocurrió un error al intentar eliminar el producto: {ex.Message}"; // Mensaje de error
+                Logger.Error(ex, "Error al eliminar el producto: {productoId}", producto.Id); 
+                return $"Ocurrió un error al intentar eliminar el producto: {ex.Message}"; 
             }
         }
 
@@ -146,14 +145,14 @@ namespace Negocios
                 var client = new RestClient(url);
                 var request = new RestRequest("products/categories", Method.Get);
 
-                // Llamada a la API para obtener las categorías
+                
                 List<string> categorias = client.Get<List<string>>(request);
                 return categorias;
             }
             catch (Exception ex)
             {
-                Logger.Error(ex, "Error al obtener categorías"); // Loguea el error
-                return null; // Devolver null en caso de erro
+                Logger.Error(ex, "Error al obtener categorías"); 
+                return null; 
             }
         }
 
@@ -167,14 +166,13 @@ namespace Negocios
                 var client = new RestClient(url);
                 var request = new RestRequest($"products/category/{categoria}", Method.Get);
 
-                // Llamada a la API para obtener productos por categoría
                 List<Productos> productos = client.Get<List<Productos>>(request);
                 return productos;
             }
             catch (Exception ex)
             {
-                Logger.Error(ex, $"Error al obtener productos por categoría: {categoria}"); // Loguea el error
-                return null; // Devolver null en caso de error
+                Logger.Error(ex, $"Error al obtener productos por categoría: {categoria}"); 
+                return null; 
             }
         }
 
@@ -188,13 +186,13 @@ namespace Negocios
                 var request = new RestRequest("products?sort=desc", Method.Get);
                 var response = client.Execute<List<Productos>>(request);
 
-                // Devolver lista de productos si la solicitud fue exitosa
+                
                 return response.Data;
             }
             catch (Exception ex)
             {
-                Logger.Error(ex, "Error al obtener productos ordenados de manera descendente"); // Loguea la excepción
-                return null; // Devolver null en caso de error
+                Logger.Error(ex, "Error al obtener productos ordenados de manera descendente"); 
+                return null; 
             }
         }
 
@@ -208,13 +206,13 @@ namespace Negocios
                 var request = new RestRequest("products?sort=asc", Method.Get);
                 var response = client.Execute<List<Productos>>(request);
 
-                // Devolver lista de productos si la solicitud fue exitosa
+                
                 return response.Data;
             }
             catch (Exception ex)
             {
-                Logger.Error(ex, "Error al obtener productos ordenados de manera ascendente"); // Loguea la excepción
-                return null;  // Devolver null en caso de error
+                Logger.Error(ex, "Error al obtener productos ordenados de manera ascendente"); 
+                return null;  
             }
         }
 
@@ -226,15 +224,15 @@ namespace Negocios
                 var client = new RestClient(url);
                 var request = new RestRequest($"products?limit={limite}", Method.Get);
 
-                // Ejecutar la solicitud y obtener la respuesta
+                
                 List<Productos> productos = client.Get<List<Productos>>(request);
 
-                return productos;  // Devolver lista de productos
+                return productos;  
             }
             catch (Exception ex)
             {
-                Logger.Error(ex, "Error al obtener productos con límite"); // Loguea la excepción
-                return null;  // Devolver null en caso de error
+                Logger.Error(ex, "Error al obtener productos con límite"); 
+                return null;  
             }
         }
     }
