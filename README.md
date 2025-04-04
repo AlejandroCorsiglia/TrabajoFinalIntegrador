@@ -18,5 +18,9 @@ Tecnologías utilizadas
 - **JSON** (Manejo de datos)
 - **Git y GitHub** (Control de versiones)
 
+  
 
+
+
+![AppWindForms](https://github.com/user-attachments/assets/c8beaffb-4296-4d71-9d98-7c4bf6e0ea59)
 
